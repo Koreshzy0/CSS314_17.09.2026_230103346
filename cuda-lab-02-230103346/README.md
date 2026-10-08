@@ -139,37 +139,4 @@ Run:
 python verify_submission.py
 ```
 
-The verification script checks Tasks 2–4 and generates the official integrity token from:
 
-1. Student ID
-2. CUDA device name
-3. Task 2 output bytes
-4. Task 4 output bytes
-
-After running it successfully, replace `<PASTE_TOKEN_HERE>` above with the printed token.
-
-## Answers / key concepts
-
-### Why does Kernel B diverge?
-
-Threads in the same warp use alternating branches (`idx % 2`), so neighboring threads do not follow the same execution path. The GPU must execute the different paths serially for the warp.
-
-### Why is Kernel C better aligned with the hardware?
-
-A warp contains 32 threads. Using `warp_id = idx // 32` makes all threads in one warp choose the same branch, avoiding intra-warp branch divergence.
-
-### Why is boundary clamping needed in Task 2?
-
-The first element has no real left neighbor and the last element has no real right neighbor. Replicating the boundary value prevents out-of-bounds memory accesses.
-
-### Why use a grid-stride loop in Task 3?
-
-The data vector is much larger than the number of launched threads. Each thread therefore processes multiple elements separated by the total grid stride.
-
-### Why are border pixels zero in Task 4?
-
-A 3x3 Sobel operation needs neighboring pixels on all sides. The outer border does not have a complete 3x3 neighborhood, so the assignment explicitly sets those pixels to zero.
-
-## Integrity note
-
-The benchmark numbers and official verification token are machine-specific and must be generated on the CUDA environment used for submission. They should not be fabricated.
