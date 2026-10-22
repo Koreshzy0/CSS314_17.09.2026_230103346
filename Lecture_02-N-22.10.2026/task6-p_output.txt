@@ -1,0 +1,13 @@
+Primitive 1: Mutex (threading.Lock)
+Execution Time : 565.469 ms
+Throughput     : 14,147,550 ops/sec
+
+Primitive 2: Simulated CAS
+Execution Time : 926.910 ms
+Throughput     : 8,630,823 ops/sec
+CAS Retries    : 169
+
+Throughput Ratio (CAS / Mutex): 0.61x
+
+Final Mutex Counter : 8,000,000
+Final CAS Counter   : 8,000,000
