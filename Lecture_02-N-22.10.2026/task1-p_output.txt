@@ -1,0 +1,12 @@
+Student ID      : 230103346
+OS / CPU        : Darwin 27.0.0 / Apple M2
+Logical cores   : 8
+Physical cores  : 8
+Workers used    : 8
+Matrix          : 8,000 x 8,000 float64 (512 MB), seed=230103346
+Method          : ThreadPoolExecutor, median of 5 runs
+
+Mode A (Row-Major, linear)    :     36.486 ms   sum = 32003450.5332
+Mode B (Column-Major, strided):     81.050 ms   sum = 32003450.5332
+
+Cache penalty factor (Mode B / Mode A): 2.22x
