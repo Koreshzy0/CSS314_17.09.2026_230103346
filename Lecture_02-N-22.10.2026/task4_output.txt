@@ -1,0 +1,14 @@
+Student ID    : 230103346
+OS            : Darwin 27.0.0
+Items         : 1000, cost(i) = sleep(0.0001 * (i % 20))
+Workers       : 4
+Total work    : 950.000 ms
+Ideal time    : 237.500 ms (perfect balance, zero overhead)
+
+Strategy                     | Total (ms) | First (ms) |  Last (ms) | Delta (ms)
+--------------------------------------------------------------------------------
+A: Static blocks (250 each)  |    302.421 |    285.257 |    302.261 |     17.004
+B: Dynamic queue (chunk=5)   |    298.696 |    288.146 |    298.589 |     10.443
+B: Dynamic queue (chunk=1)   |    296.613 |    294.798 |    296.531 |      1.733
+
+Delta = time between the first and the last worker finishing.
