@@ -1,0 +1,14 @@
+Student ID       : 230103346
+OS / Arch        : Mac OS X 27.0.1 / aarch64
+Java             : 25.0.1
+Threads (N)      : 8
+Increments/thread: 50 000 000
+Method           : median of 5 runs, padding stride = 16 longs (128 bytes)
+
+Unpadded Shared  :    107,641 ms
+Padded (128 B)   :     68,636 ms
+Local variable   :      0,253 ms
+
+Ratio Unpadded / Padded :   1,57x
+Ratio Unpadded / Local  : 425,18x
+All counters verified: each equals 50 000 000
