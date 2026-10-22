@@ -1,0 +1,10 @@
+Student ID      : 230103346
+OS              : Darwin 27.0.0 (Darwin Kernel Version 27.0.0: Tue Aug 11 21:02:16 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T8112)
+Platform        : macOS-27.0.1-arm64-arm-64bit-Mach-O
+CPU model       : Apple M2
+Logical cores   : 8
+Python / NumPy  : 3.14.0 / 2.5.3
+Array           : 20,000,000 elements, dtype=float64
+Sum             : 10002037.166412
+Std deviation   : 0.2886754591
+Execution time  : 71.111 ms
