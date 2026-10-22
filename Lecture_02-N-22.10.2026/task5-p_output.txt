@@ -1,0 +1,21 @@
+Student ID    : 230103346
+OS / CPU      : Darwin 27.0.0 / Apple M2
+Logical cores : 8
+Batch         : 10,000 tasks, each hashes 500 x 1024 B (500 KB) with SHA-256
+Pool sizes    : [1, 4, 8, 16, 32, 128, 256]
+Timing        : median of 3 runs, pool creation and shutdown included
+Note          : each task hashes one large buffer per call, so hashlib releases the GIL
+
+ Pool Size | Execution Time (ms) | Speedup vs 1 thread | Status
+-------------------------------------------------------------------------------------------------------
+         1 |            2064.820 |               1.00x | baseline
+         4 |             562.486 |               3.67x | improving
+         8 |             359.826 |               5.74x | BEST | improving
+        16 |             361.226 |               5.72x | plateau
+        32 |             362.508 |               5.70x | plateau
+       128 |             388.963 |               5.31x | <-- WORSENING STARTS (oversubscription / context switching)
+       256 |             418.724 |               4.93x | worse
+
+Fastest pool size       : 8 threads (359.826 ms, 5.74x vs 1 thread)
+Execution time starts worsening at pool size 128 (more than 3% slower than the previous size).
+Checksums identical for all pool sizes: 0x4f1d36803bdfacb2
