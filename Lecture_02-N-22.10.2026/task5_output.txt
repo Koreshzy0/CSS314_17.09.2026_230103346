@@ -1,0 +1,17 @@
+Student ID    : 230103346
+OS / CPU      : Darwin 27.0.0 / Apple M2
+Logical cores : 8
+Workers       : 8 (ThreadPoolExecutor, pool created once and reused)
+Operation     : y[i] = 2.5 * x[i] + 1.5, float64
+Timing        : median of many repetitions per size
+
+           N |  Serial (us) | Parallel (us) |  Speedup | Verdict
+--------------------------------------------------------------------------
+         100 |         0.75 |        102.58 |    0.01x | parallel SLOWER
+       1,000 |         1.00 |        101.92 |    0.01x | parallel SLOWER
+      10,000 |         3.96 |        148.00 |    0.03x | parallel SLOWER
+     100,000 |        29.17 |        174.44 |    0.17x | parallel SLOWER
+   1,000,000 |       303.88 |        279.54 |    1.09x | parallel FASTER
+  10,000,000 |      4080.50 |       4866.46 |    0.84x | parallel SLOWER
+
+Coarse result : parallel was never consistently faster than serial for the tested sizes.
