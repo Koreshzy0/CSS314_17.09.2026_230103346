@@ -1,0 +1,28 @@
+Student ID       : 230103346
+OS / Arch        : Mac OS X 27.0.1 / aarch64
+Java             : 25.0.1
+Logical cores    : 8
+Threads          : 4
+Increments/thread: 2 000 000
+Expected final   : 8 000 000
+
+Unsynchronized runs (no locks, non-atomic read-modify-write):
+ Run |       Actual |         Lost |  Lost (%) |  Time (ms)
+--------------------------------------------------------------
+   1 |    2 401 905 |    5 598 095 |    69,98% |     19,478
+   2 |    1 994 096 |    6 005 904 |    75,07% |      2,232
+   3 |    2 002 054 |    5 997 946 |    74,97% |      2,146
+   4 |    2 292 112 |    5 707 888 |    71,35% |      2,240
+   5 |    2 384 916 |    5 615 084 |    70,19% |      2,406
+
+Summary (unsynchronized, mean of 5 runs):
+Expected final value : 8 000 000
+Actual final value   : 2 215 017
+Updates lost         : 72,31%
+
+Correct versions (median of 5 runs, final value verified = 8 000 000):
+Version                    |  Time (ms) | Penalty (ms) | Slowdown
+------------------------------------------------------------------
+Unsynchronized (wrong)     |      2,240 |            - |    1.00x
+AtomicInteger              |     62,379 |       60,139 |   27,84x
+ReentrantLock              |    122,925 |      120,685 |   54,87x
