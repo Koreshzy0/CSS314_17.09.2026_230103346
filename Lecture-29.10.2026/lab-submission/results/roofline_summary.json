@@ -1,0 +1,19 @@
+{
+  "kernel": "five_point_stencil",
+  "flops_per_cell_estimate": 5,
+  "dram_bytes_per_cell_estimate": 48,
+  "arithmetic_intensity_flops_per_byte": 0.10416666666666667,
+  "cache_sizes_bytes": {
+    "L1_data_bytes": 65536,
+    "L2_bytes": 4194304,
+    "L3_bytes": null,
+    "cache_line_bytes": 64
+  },
+  "peak_memory_bandwidth_bytes_per_second": null,
+  "peak_compute_flops_per_second": null,
+  "bottleneck_classification": "Undetermined: provide measured or documented peak bandwidth and peak FLOP/s to classify Roofline.",
+  "serial_fraction_estimate": 1.0,
+  "amdahl_speedup_ceiling": 1.0,
+  "strong_scaling_reference_checksum": 45.38284876684541,
+  "note": "Checksum comparisons across process counts require identical input data and decomposition-independent numerical behavior."
+}

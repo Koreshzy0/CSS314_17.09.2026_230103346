@@ -1,0 +1,9 @@
+{
+  "N": 1024,
+  "M": 512,
+  "naive_median_seconds": 0.13726012500410434,
+  "interchanged_median_seconds": 0.01920112500374671,
+  "speedup": 7.1485459824526325,
+  "max_absolute_error": 0.0,
+  "numerically_correct": true
+}

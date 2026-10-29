@@ -1,0 +1,24 @@
+{
+  "cpu": {
+    "model": "Apple M2",
+    "microarchitecture_details": "Unknown",
+    "base_frequency_mhz": null
+  },
+  "physical_cores": 8,
+  "logical_threads": 8,
+  "smt_enabled": false,
+  "cache": {
+    "L1_data_bytes": 65536,
+    "L2_bytes": 4194304,
+    "L3_bytes": null,
+    "cache_line_bytes": 64
+  },
+  "os": "Darwin",
+  "os_release": "27.0.0",
+  "kernel_version": "Darwin Kernel Version 27.0.0: Tue Aug 11 21:02:16 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T8112",
+  "machine": "arm64",
+  "python": {
+    "version": "3.14.0 (v3.14.0:ebf955df7a8, Oct  7 2025, 08:20:14) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "implementation": "CPython"
+  }
+}
