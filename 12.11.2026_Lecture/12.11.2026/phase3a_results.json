@@ -1,0 +1,20 @@
+{
+    "workers": 8,
+    "buffer_bytes_each": 100663296,
+    "bandwidth_GB_s": 38.94225527696511,
+    "bandwidth_median_s": 0.005169875,
+    "bandwidth_samples_s": [
+        0.007801209,
+        0.005169875,
+        0.005106458
+    ],
+    "compute_FLOPs_per_worker": 80000000,
+    "compute_median_s": 0.846480834,
+    "compute_samples_s": [
+        0.878444584,
+        0.846480834,
+        0.834352958
+    ],
+    "compute_GFLOP_s": 0.7560714599711775,
+    "ridge_point_FLOP_per_byte": 0.019415194487166856
+}
