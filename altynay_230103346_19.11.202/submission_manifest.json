@@ -1,0 +1,62 @@
+{
+  "GITHUB_USERNAME": "Koreshzy0",
+  "gpu_uuid": "GPU-6ded8d6b-03c8-49f6-7855-ba633f3068ff",
+  "instance_seed": 8694547779874023558,
+  "mpi_ranks": 4,
+  "cartesian_dims": [
+    2,
+    2
+  ],
+  "global_grid": [
+    512,
+    512
+  ],
+  "local_padded_shape": [
+    258,
+    258
+  ],
+  "steps": 400,
+  "kappa_max": 0.23999962497115201,
+  "dx": 0.001949317738791423,
+  "dt_max": 3.9581724838358046e-06,
+  "dt": 1.9790862419179023e-06,
+  "serialized_ms": 4093.675517003703,
+  "overlapped_ms": 4376.437609004597,
+  "serialized_cuda_event_ms": 4009.5899246931076,
+  "overlapped_cuda_event_ms": 4120.885662794113,
+  "parity_max_diff": 0.0,
+  "ptx_counts": {
+    "st.shared.f64": 5,
+    "ld.shared.f64": 5,
+    "bar.sync": 1
+  },
+  "ptx_audit_passed": true,
+  "energy_trace": [
+    {
+      "step": 0,
+      "energy": 0.059522844497047415,
+      "l2_residual": 0.0
+    },
+    {
+      "step": 100,
+      "energy": 0.05952248584536475,
+      "l2_residual": 0.007997853680082987
+    },
+    {
+      "step": 200,
+      "energy": 0.05952213764112527,
+      "l2_residual": 0.007791018525286868
+    },
+    {
+      "step": 300,
+      "energy": 0.059521797314911064,
+      "l2_residual": 0.007592167961766057
+    },
+    {
+      "step": 400,
+      "energy": 0.059521464130075905,
+      "l2_residual": 0.00740087891626832
+    }
+  ],
+  "energy_monotone_decreasing": true
+}
