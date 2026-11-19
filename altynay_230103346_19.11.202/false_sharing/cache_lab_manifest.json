@@ -1,0 +1,152 @@
+{
+  "git_username": "Koreshzy0",
+  "cpu_model": "Apple M2",
+  "logical_cores": 8,
+  "cache_line_size_bytes": 128,
+  "instance_seed": 9794293981315474915,
+  "affinity_supported": false,
+  "affinity_cores": null,
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "python": "3.14.0",
+  "numba": "0.68.0",
+  "num_threads": 4,
+  "iterations_per_thread": 60000000,
+  "repeats": 3,
+  "results": {
+    "A_contiguous": {
+      "stride_elements": 1,
+      "stride_bytes": 8,
+      "elapsed_ns_median": 162123667,
+      "elapsed_ns_all_runs": [
+        160761791,
+        162396208,
+        162123667
+      ],
+      "ns_per_update": 2.7020611166666666,
+      "total_updates": 240000000,
+      "vol_ctx_switches_median_run": 0,
+      "invol_ctx_switches_median_run": 136,
+      "lines_touched_64B": 1,
+      "lines_touched_detected": 1,
+      "finals": [
+        7620000000,
+        7620000000,
+        7620000000,
+        7620000000
+      ]
+    },
+    "B_half_line": {
+      "stride_elements": 4,
+      "stride_bytes": 32,
+      "elapsed_ns_median": 162256416,
+      "elapsed_ns_all_runs": [
+        160386417,
+        162363542,
+        162256416
+      ],
+      "ns_per_update": 2.7042736,
+      "total_updates": 240000000,
+      "vol_ctx_switches_median_run": 0,
+      "invol_ctx_switches_median_run": 162,
+      "lines_touched_64B": 2,
+      "lines_touched_detected": 1,
+      "finals": [
+        7620000000,
+        7620000000,
+        7620000000,
+        7620000000
+      ]
+    },
+    "C_line_padded": {
+      "stride_elements": 8,
+      "stride_bytes": 64,
+      "elapsed_ns_median": 153518208,
+      "elapsed_ns_all_runs": [
+        153518208,
+        154784875,
+        153490792
+      ],
+      "ns_per_update": 2.5586368,
+      "total_updates": 240000000,
+      "vol_ctx_switches_median_run": 0,
+      "invol_ctx_switches_median_run": 42,
+      "lines_touched_64B": 4,
+      "lines_touched_detected": 2,
+      "finals": [
+        7620000000,
+        7620000000,
+        7620000000,
+        7620000000
+      ]
+    },
+    "D_prefetch_safe": {
+      "stride_elements": 16,
+      "stride_bytes": 128,
+      "elapsed_ns_median": 152948334,
+      "elapsed_ns_all_runs": [
+        154294333,
+        152948334,
+        152543333
+      ],
+      "ns_per_update": 2.5491389,
+      "total_updates": 240000000,
+      "vol_ctx_switches_median_run": 0,
+      "invol_ctx_switches_median_run": 50,
+      "lines_touched_64B": 4,
+      "lines_touched_detected": 4,
+      "finals": [
+        7620000000,
+        7620000000,
+        7620000000,
+        7620000000
+      ]
+    },
+    "private_baseline": {
+      "stride_elements": 8,
+      "stride_bytes": 64,
+      "elapsed_ns_median": 17206125,
+      "elapsed_ns_all_runs": [
+        17409208,
+        17206125,
+        17196625
+      ],
+      "ns_per_update": 0.28676875,
+      "total_updates": 240000000,
+      "vol_ctx_switches_median_run": 0,
+      "invol_ctx_switches_median_run": 20,
+      "lines_touched_64B": 4,
+      "lines_touched_detected": 2,
+      "finals": [
+        7620000000,
+        7620000000,
+        7620000000,
+        7620000000
+      ]
+    }
+  },
+  "slowdown_stride1_vs_stride8": 1.0560549729710238,
+  "slowdown_stride1_vs_stride16": 1.0599897544487147,
+  "ratio_stride8_vs_stride16": 1.0037259248603518,
+  "ratio_stride8_vs_private": 8.922299936795763,
+  "ratio_stride1_vs_private": 9.422439218592217,
+  "parity_bit_exact": true,
+  "reference_finals": [
+    7620000000,
+    7620000000,
+    7620000000,
+    7620000000
+  ],
+  "llvm_audit": {
+    "store_i64": 1,
+    "load_i64": 1,
+    "python_object_fallback": false,
+    "audit_passed": true
+  },
+  "gil_demo": {
+    "total_updates": 8000000,
+    "one_thread_ns": 173098500,
+    "four_threads_ns": 178906958,
+    "ratio_4_over_1": 1.0335557962662878
+  },
+  "verification_passed": true
+}
