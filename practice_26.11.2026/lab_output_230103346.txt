@@ -1,0 +1,44 @@
+Backend: omp | Logical Cores: 8 | Student: 230103346
+
+--- TASK 1 ---
+buggy lost counts per run : [2563029, 2631025, 2636099, 2631971, 2461387, 2371309, 2540006, 2617701, 2617897, 2655851]
+max |hist - ref|          : 42158
+max |w_sums - ref|        : 5.825777e+04
+safe @ 1 threads: bit-identical OK | active workers = 1/1 | worker_hits = [4084992]
+safe @ 2 threads: bit-identical OK | active workers = 2/2 | worker_hits = [2042496, 2042496]
+safe @ 4 threads: bit-identical OK | active workers = 4/4 | worker_hits = [1021248, 1021248, 1021248, 1021248]
+safe @ 8 threads: bit-identical OK | active workers = 8/8 | worker_hits = [510624, 510624, 510624, 510624, 510624, 510624, 510624, 510624]
+
+--- TASK 2 ---
+PAD_STRIDE = 16 int64 slots = 128 bytes
+1 threads: unpadded 0.0368s | padded 0.0369s | ratio 1.00x
+2 threads: unpadded 0.0388s | padded 0.0388s | ratio 1.00x
+4 threads: unpadded 0.0403s | padded 0.0403s | ratio 1.00x
+8 threads: unpadded 0.0481s | padded 0.0487s | ratio 0.99x
+Padding speedup at 8 threads: 0.99x
+
+--- TASK 3 ---
+1 threads: static 0.0555s (LIR 1.000) | balanced 0.0558s (LIR 1.000)
+2 threads: static 0.0285s (LIR 1.000) | balanced 0.0286s (LIR 1.002)
+4 threads: static 0.0148s (LIR 1.000) | balanced 0.0149s (LIR 1.005)
+8 threads: static 0.0130s (LIR 1.000) | balanced 0.0132s (LIR 1.009)
+static   ops/thread = [1309140, 1309140, 1309140, 1309140, 1309140, 1309140, 1309140, 1309140]  LIR = 1.000  time = 0.0132s
+balanced ops/thread = [1318331, 1308375, 1308219, 1308047, 1307859, 1307655, 1307435, 1307199]  LIR = 1.009  time = 0.0131s
+Validation gate PASSED: max|diff| = 0.00e+00, LIR = 1.009 < 1.15
+
+--- TASK 4 ---
+grid 448x544, omega = 1.720, sweeps = 600
+1 thread : 0.1715s | speedup 1.00x | max_delta = 5.164e-02
+2 threads: 0.1113s | speedup 1.54x | max_delta = 5.164e-02 | max_abs_diff = 0.00e+00
+4 threads: 0.0793s | speedup 2.16x | max_delta = 5.164e-02 | max_abs_diff = 0.00e+00
+8 threads: 0.1025s | speedup 1.67x | max_delta = 5.164e-02 | max_abs_diff = 0.00e+00
+
+=== OPENMP PYTHON LAB VERIFICATION BUNDLE ===
+{
+  "instructor": "Instructor - Sufyan bin Uzayr",
+  "student_name": "Sultangazyyeva Altynay",
+  "student_id": 230103346,
+  "omp_layer": "omp",
+  "cpu_cores": 8,
+  "verification_digest": "8EB71F8579A819EB8021"
+}
